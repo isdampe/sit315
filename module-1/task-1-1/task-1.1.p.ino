@@ -47,10 +47,13 @@ void loop() {
 
 	// Turn the LED on whenever an object is DISTANCE_THRESHOLD_CM 
 	// or less from the sensor.
-	if (bucketCounter >= BUCKET_COUNT_THRESHOLD)
+	if (bucketCounter >= BUCKET_COUNT_THRESHOLD) {
+		Serial.println("Turning LED actuator on");
 		digitalWrite(LED_PIN, HIGH);
-	else if (bucketCounter <= 0)
+	} else if (bucketCounter <= 0) {
+		Serial.println("Turning LED actuator off");
 		digitalWrite(LED_PIN, LOW);
+	}
 
 	delayMicroseconds(10);
 }
