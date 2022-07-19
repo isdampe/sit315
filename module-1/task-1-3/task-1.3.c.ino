@@ -3,8 +3,8 @@
 #define LED_PIN LED_BUILTIN
 #define SECOND_LED_PIN 7
 
-static int switchState = LOW;
-static int secondSwitchState = LOW;
+volatile static int switchState = LOW;
+volatile static int secondSwitchState = LOW;
 
 void setup() {
 	pinMode(SWITCH_PIN, INPUT_PULLUP);
